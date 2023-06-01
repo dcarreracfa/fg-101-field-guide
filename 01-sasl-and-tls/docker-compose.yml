@@ -18,6 +18,10 @@ services:
       - 9092:9092
       - 9644:9644
       - 29092:29092
+    volumes:
+      - ./volumes/certs:/certs:ro
+      - ./volumes/redpanda-etc:/etc/redpanda
+      - ./volumes/redpanda-var:/var/lib/redpanda/data
 
   console:
     image: vectorized/console:latest
